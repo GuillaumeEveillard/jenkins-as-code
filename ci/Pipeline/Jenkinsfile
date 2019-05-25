@@ -7,9 +7,9 @@ pipeline {
 		}
 	}
     stages {
-        stage('Test') {
+        stage('Compile') {
             steps {
-                sh 'mvn -v'
+                sh 'mvn -f kotlin-hello-world clean install '
             }
         }
     }
