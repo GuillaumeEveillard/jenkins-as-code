@@ -1,0 +1,14 @@
+pipeline {
+    agent { 
+		dockerfile {
+			filename 'ci/Build/Dockerfile'
+		}
+	}
+    stages {
+        stage('Test') {
+            steps {
+                sh 'mvn -v'
+            }
+        }
+    }
+}
