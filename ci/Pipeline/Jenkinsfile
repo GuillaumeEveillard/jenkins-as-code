@@ -1,7 +1,9 @@
 pipeline {
     agent { 
 		dockerfile {
-			filename 'ci/Build/Dockerfile'
+			filename 'Dockerfile'
+			dir 'ci/Build'
+			args '--entrypoint=\'\''
 		}
 	}
     stages {
