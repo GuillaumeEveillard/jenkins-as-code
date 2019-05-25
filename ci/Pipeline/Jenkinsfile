@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                sh 'mvn -f kotlin-hello-world clean install '
+                sh 'mvn --batch-mode -f kotlin-hello-world clean install '
             }
         }
     }

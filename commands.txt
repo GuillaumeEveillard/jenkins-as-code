@@ -1,5 +1,7 @@
 
+cd ci/Jenkins
+docker image build -t jenkins-as-code .
+docker run --rm -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --privileged -p 50000:50000 jenkins-as-code:latest
 
 
-
-docker run --rm -p 8080:8080 -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --privileged -p 50000:50000 --entrypoint /bin/bash -i -t jenkinsauto:latest
+docker run --rm -p 8080:8080 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --privileged -p 50000:50000 --entrypoint /bin/bash -i -t jenkins-as-code:latest

@@ -14,6 +14,8 @@ RUN usermod -aG docker jenkins
 
 # USER jenkins
 
+COPY build-my-project_config.xml /var/jenkins_home/jobs/build-my-project/config.xml
+
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 
 RUN /usr/local/bin/install-plugins.sh git:latest docker-workflow:latest workflow-multibranch:latest workflow-aggregator:latest
